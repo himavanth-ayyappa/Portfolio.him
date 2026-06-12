@@ -18,10 +18,10 @@ Or push to GitHub and import the repo at vercel.com. Every push redeploys, which
 ## Editing content — no component changes needed
 | What | File |
 |---|---|
-| Name, tagline, links, status, metrics, DRDL bullets, recognition | `data/profile.ts` |
+| Name, tagline, links, status, metrics, recognition | `data/profile.ts` |
 | Projects + case studies | `data/projects.ts` |
 | Skill graph nodes/edges | `data/skills.ts` |
-| Lab manual entries (no-code builds), excluded repos, education, IIT-M credential link | `data/lab.ts` |
+| Lab manual entries (no-code builds), excluded repos, education, | `data/lab.ts` |
 | Resume file | replace `public/resume.pdf` |
 
 ## Notes
