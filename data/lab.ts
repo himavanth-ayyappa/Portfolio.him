@@ -19,7 +19,7 @@ export const labManual: LabEntry[] = [
 ];
 
 // Repos to hide from the auto-synced Lab grid (exact repo names).
-export const labExclude: string[] = ["port_LLM", "SIH---Forecasting_Future_Water_Requirements___-ML-","_SIH---Forecasting_Future_Storage_Capacities_In_Reservoir","Face_ExpressionTracker---Dyslexic","offline--LLM-assistant"];
+export const labExclude: string[] = ["port_LLM", "Portfolio.him","SIH---Forecasting_Future_Water_Requirements___-ML-","_SIH---Forecasting_Future_Storage_Capacities_In_Reservoir","Face_ExpressionTracker---Dyslexic","offline--LLM-assistant"];
 
 export const education = [
   {
