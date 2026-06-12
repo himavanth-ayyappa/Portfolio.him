@@ -138,7 +138,7 @@ export function EducationSection() {
                   <>
                     {" \u00b7 "}
                     <a
-                      href={e.credentialUrl}
+                      // href={e.credentialUrl}
                       target="_blank"
                       rel="noreferrer"
                       className="text-acid hover:underline"
