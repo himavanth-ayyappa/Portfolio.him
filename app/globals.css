@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0b0d;
+  color: #f2f2f0;
+}
+
+::selection {
+  background: #d4ff4f;
+  color: #0b0b0d;
+}
+
+.row-hover {
+  transition: background 0.18s ease;
+}
+.row-hover:hover {
+  background: #101013;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .row-hover { transition: none; }
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #d4ff4f;
+  outline-offset: 3px;
+}

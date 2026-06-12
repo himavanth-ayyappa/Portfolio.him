@@ -1,0 +1,63 @@
+export type SkillNode = { id: string; cluster?: string; hub?: boolean };
+export type SkillLink = { source: string; target: string };
+
+export const hubs: SkillNode[] = [
+  { id: "AI/ML", hub: true },
+  { id: "HPC", hub: true },
+  { id: "Backend", hub: true },
+  { id: "Frontend", hub: true },
+  { id: "Data", hub: true },
+  { id: "Infra", hub: true },
+  { id: "Languages", hub: true },
+];
+
+export const skills: SkillNode[] = [
+  { id: "LLMs", cluster: "AI/ML" },
+  { id: "RAG", cluster: "AI/ML" },
+  { id: "LangChain", cluster: "AI/ML" },
+  { id: "MCP", cluster: "AI/ML" },
+  { id: "LLMOps", cluster: "AI/ML" },
+  { id: "MLOps", cluster: "AI/ML" },
+  { id: "Fine-tuning", cluster: "AI/ML" },
+  { id: "Prompt eng", cluster: "AI/ML" },
+  { id: "CUDA C", cluster: "HPC" },
+  { id: "NVIDIA MPS", cluster: "HPC" },
+  { id: "MPI", cluster: "HPC" },
+  { id: "Profiling", cluster: "HPC" },
+  { id: "FastAPI", cluster: "Backend" },
+  { id: "Flask", cluster: "Backend" },
+  { id: "Node.js", cluster: "Backend" },
+  { id: "Express", cluster: "Backend" },
+  { id: "REST", cluster: "Backend" },
+  { id: "React", cluster: "Frontend" },
+  { id: "Vue.js", cluster: "Frontend" },
+  { id: "HTML/CSS", cluster: "Frontend" },
+  { id: "MongoDB", cluster: "Data" },
+  { id: "PostgreSQL", cluster: "Data" },
+  { id: "SQL", cluster: "Data" },
+  { id: "Vector DBs", cluster: "Data" },
+  { id: "Docker", cluster: "Infra" },
+  { id: "AWS", cluster: "Infra" },
+  { id: "Linux", cluster: "Infra" },
+  { id: "Git", cluster: "Infra" },
+  { id: "Jenkins", cluster: "Infra" },
+  { id: "Python", cluster: "Languages" },
+  { id: "Java", cluster: "Languages" },
+  { id: "C/C++", cluster: "Languages" },
+];
+
+export const crossLinks: SkillLink[] = [
+  { source: "Python", target: "FastAPI" },
+  { source: "Python", target: "LangChain" },
+  { source: "Python", target: "MLOps" },
+  { source: "Python", target: "Flask" },
+  { source: "C/C++", target: "CUDA C" },
+  { source: "LangChain", target: "Vector DBs" },
+  { source: "RAG", target: "Vector DBs" },
+  { source: "MCP", target: "LLMs" },
+  { source: "LLMOps", target: "MLOps" },
+  { source: "Node.js", target: "MongoDB" },
+  { source: "Docker", target: "AWS" },
+  { source: "React", target: "Node.js" },
+  { source: "PostgreSQL", target: "SQL" },
+];
