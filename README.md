@@ -26,5 +26,5 @@ Or push to GitHub and import the repo at vercel.com. Every push redeploys, which
 
 ## Notes
 - Lab auto-syncs public, non-fork repos from `himavanth-ayyappa` at build time (top 18 by recent push). If GitHub is unreachable during build, the site still builds with manual entries only.
-- IIT Madras credential: paste the link into `credentialUrl` in `data/lab.ts`.
+
 - Respects `prefers-reduced-motion`; hero graph and skill physics degrade gracefully.
