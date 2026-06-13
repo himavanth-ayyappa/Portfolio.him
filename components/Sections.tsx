@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SectionShell } from "./SectionShell";
 import { experience, profile, recognition } from "@/data/profile";
 import { projects } from "@/data/projects";
-import { education, labManual, LabEntry } from "@/data/lab";
+import { education, labManual, labBadges, LabEntry } from "@/data/lab";
 import type { Repo } from "@/lib/github";
 
 export function WorkSection() {
@@ -78,14 +78,21 @@ export function LabSection({ repos }: { repos: Repo[] }) {
         {manual.map((m) => (
           <a
             key={m.name}
-            href={m.href || profile.github }
+            href={m.href || profile.github}
             target="_blank"
             rel="noreferrer"
             className="group border border-line p-3.5 transition-colors hover:border-acid"
           >
-            <p className="font-mono text-[12px] text-paper group-hover:text-acid">
-              {m.name}
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-mono text-[12px] text-paper group-hover:text-acid">
+                {m.name}
+              </p>
+              {m.badge && (
+                <span className="border border-[#3a3a20] px-1.5 py-0.5 font-mono text-[8px] tracking-wider text-acid">
+                  {m.badge.toUpperCase()}
+                </span>
+              )}
+            </div>
             <p className="mt-1 line-clamp-2 text-[11px] text-fog">{m.blurb}</p>
             <p className="mt-2 font-mono text-[9px] tracking-wider text-dim">
               {m.tag.toUpperCase()}
@@ -100,9 +107,16 @@ export function LabSection({ repos }: { repos: Repo[] }) {
             rel="noreferrer"
             className="group border border-line p-3.5 transition-colors hover:border-acid"
           >
-            <p className="font-mono text-[12px] text-paper group-hover:text-acid">
-              {r.name}
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-mono text-[12px] text-paper group-hover:text-acid">
+                {r.name}
+              </p>
+              {labBadges[r.name] && (
+                <span className="border border-[#3a3a20] px-1.5 py-0.5 font-mono text-[8px] tracking-wider text-acid">
+                  {labBadges[r.name].toUpperCase()}
+                </span>
+              )}
+            </div>
             <p className="mt-1 line-clamp-2 text-[11px] text-fog">
               {r.description || "No description yet."}
             </p>
@@ -115,7 +129,8 @@ export function LabSection({ repos }: { repos: Repo[] }) {
       </div>
       {repos.length === 0 && (
         <p className="mt-3 font-mono text-[10px] text-dim">
-          
+          {/* GITHUB SYNC UNAVAILABLE AT BUILD TIME {"\u2014"} SHOWING MANUAL
+          ENTRIES ONLY */}
         </p>
       )}
     </SectionShell>
@@ -202,7 +217,7 @@ export function ContactSection() {
       <div className="border-t border-line">
         <p className="mx-auto max-w-5xl px-5 py-3 font-mono text-[9px] tracking-wider text-dim">
           {"\u00a9"} {new Date().getFullYear()} {profile.fullName.toUpperCase()}
-          {" \u00b7 HYDERABAD, IN"}
+          {" \u00b7 BUILT WITH NEXT.JS \u00b7 HYDERABAD, IN"}
         </p>
       </div>
     </footer>

@@ -2,24 +2,34 @@ export type LabEntry = {
   name: string;
   blurb: string;
   href?: string;
-  tag: string;
+  tag: string; // build method: no-code / low-code / vibe-coded
+  badge?: string; // category: prototype / mini-project / poc / experiment
 };
 
 // Manual entries for vibe-coded / no-code / low-code builds that
 // don't live on GitHub. Edit freely \u2014 these merge with the
 // auto-synced GitHub repos in the Lab section.
+
 export const labManual: LabEntry[] = [
   {
     name: "Kochi-metro-ops",
     blurb: "The KMRL Fleet Induction Intelligence ---This was a quick prototype built to demonstrate an AI-driven decision-support dashboard designed to optimize Kochi Metro's daily train scheduling. It automates fleet availability by tracking maintenance job cards, cleaning slots, mileage limits, and advertising exposure to prevent scheduling bottlenecks.",
     href: "https://opskochimetroin.vercel.app/",
-    tag: "No-code",
+    tag: "low-code",
+    badge: "prototype"
   },
   
 ];
+// Category badge for auto-synced GitHub repos. Key = exact repo name,
+// value = badge label (e.g. "prototype", "mini-project", "poc",
+// "experiment"). Repos not listed here render without a badge.
+export const labBadges: Record<string, string> = {
+  // "exact-repo-name": "prototype",
+};
 
 // Repos to hide from the auto-synced Lab grid (exact repo names).
-export const labExclude: string[] = ["port_LLM", "Portfolio.him","SIH---Forecasting_Future_Water_Requirements___-ML-","_SIH---Forecasting_Future_Storage_Capacities_In_Reservoir","Face_ExpressionTracker---Dyslexic","offline--LLM-assistant"];
+export const labExclude: string[] = [ "port_LLM","Portfolio.him","SIH---Forecasting_Future_Water_Requirements___-ML-","_SIH---Forecasting_Future_Storage_Capacities_In_Reservoir","Face_ExpressionTracker---Dyslexic","offline--LLM-assistant"];
+
 
 export const education = [
   {

@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: "AI Document Assistant",
     period: "Mar\u2014Apr 2026",
     oneLiner:
-      "Full-stack RAG application: natural-language Q&A over uploaded documents with agentic multi-step workflows.",
+      "RAG application: natural-language Q&A over uploaded documents with agentic multi-step workflows.",
     tools: ["Python", "FastAPI", "LangChain", "ChromaDB", "React", "Hugging Face"],
     caseStudy: {
       problem:
